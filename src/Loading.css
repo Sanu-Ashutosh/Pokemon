@@ -1,0 +1,36 @@
+/* Loading.css */
+.loading {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rem;
+}
+
+.ellipsis {
+    display: inline-block;
+    width: 1.5em; /* Adjust the width based on your requirement */
+    text-align: left;
+}
+
+@keyframes ellipsis {
+    0% {
+        content: '.';
+    }
+    33% {
+        content: '..';
+    }
+    66% {
+        content: '...';
+    }
+    100% {
+        content: '';
+    }
+}
+
+.ellipsis::after {
+    content: '';
+    animation: ellipsis steps(4, end) 1s infinite;
+}
